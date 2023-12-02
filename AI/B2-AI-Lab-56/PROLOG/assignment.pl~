@@ -1,0 +1,46 @@
+symptom(raju, fever).
+symptom(raju, fatigue).
+symptom(raju, sore_throat).
+symptom(raju, runny_nose).
+
+symptom(sita, fever).
+symptom(sita, cough).
+symptom(sita, shortness_of_breath).
+symptom(sita, fatigue).
+
+symptom(lisa, headache).
+symptom(lisa, body_ache).
+symptom(lisa, chills).
+symptom(lisa, fever).
+
+symptom(kali, rash).
+symptom(kali, itching).
+symptom(kali, swollen_lymph_nodes).
+symptom(kali, fatigue).
+
+% Hypotheses
+hypothesis(Patient, flu) :-
+                          symptom(Patient, fever),
+                          symptom(Patient, fatigue),
+                          symptom(Patient, sore_throat),
+                          symptom(Patient, runny_nose).
+
+hypothesis(Patient, covid19) :-
+                               symptom(Patient, fever),
+                               symptom(Patient, cough),
+                               symptom(Patient, shortness_of_breath),
+                               symptom(Patient, fatigue).
+
+hypothesis(Patient, common_cold) :-
+                                 symptom(Patient, sore_throat),
+                                 symptom(Patient, runny_nose).
+
+hypothesis(Patient, allergies) :-
+                                symptom(Patient, headache),
+                                symptom(Patient, body_ache),
+                                symptom(Patient, chills).
+
+hypothesis(Patient, chickenpox) :-
+                                 symptom(Patient, rash),
+                                 symptom(Patient, itching),
+                                 symptom(Patient, swollen_lymph_nodes).

@@ -1,0 +1,1 @@
+# Calculate the total cost (heuristic + depth) for A* algorithm
